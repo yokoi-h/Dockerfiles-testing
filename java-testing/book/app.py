@@ -65,9 +65,7 @@ class BookForm(Form):
 @get('/books')
 def index(db):
     books = db.query(Book).all()
-    print "return"
     tmpobj = template('index', books=books, request=request)
-    print tmpobj
     return tmpobj
 
 
@@ -75,7 +73,6 @@ def index(db):
 def new(db):
     form = BookForm()
     tmpobj = template('edit', form=form, request=request)
-    print tmpobj
     return tmpobj
 
 @post('/books/add')
