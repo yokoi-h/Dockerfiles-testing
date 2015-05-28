@@ -7,6 +7,6 @@ ENV HOME /root
 WORKDIR /root
 ADD book /root/book/
 RUN cd /root/book && pip install -r requirements.txt
-
+WORKDIR /root/book
 CMD ["/usr/bin/python", "/root/book/app.py"]
 
